@@ -4,6 +4,7 @@
 $project = ".\Binner.PrintSpoolService\Binner.PrintSpoolService.slnx"
 $releaseConfiguration = "Release"
 $framework = "net10.0"
+$binnerBranch = "master" # the branch to clone for Binner dependencies
 $versionTag = "v$env:APPVEYOR_BUILD_VERSION"
 
 Write-Host "Building $env:APPVEYOR_BUILD_VERSION" -ForegroundColor magenta
@@ -23,6 +24,16 @@ $sw = [Diagnostics.Stopwatch]::StartNew()
   tar --version
   Write-Host "Docker" -ForegroundColor cyan
   docker --version
+
+#Clone and build Binner into the ExternalBuild folder, where the licensed provider project will reference the data layer
+$path = "C:\projects\Binner"
+Write-Host "Cloning Binner[$binnerBranch] to $path" -ForegroundColor green
+If (!(test-path -PathType container $path)) {
+  New-Item -ItemType Directory -Path $path
+}
+
+git clone -q --branch=$binnerBranch https://github.com/replaysMike/Binner.git $path
+if ($LastExitCode -ne 0) { exit $LASTEXITCODE }
 
 $sw.Stop()
 $sw.Elapsed | Select-Object @{n = "Elapsed"; e = { $_.Minutes, "m ", $_.Seconds, "s ", $_.Milliseconds, "ms " -join "" } }
