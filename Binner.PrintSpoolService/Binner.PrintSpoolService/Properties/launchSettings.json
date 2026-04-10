@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Binner.PrintSpoolService": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
