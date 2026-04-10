@@ -16,7 +16,7 @@ AppUpdatesURL={#MyAppURL}
 VersionInfoVersion={#MyAppVersion}
 DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
-LicenseFile=..\Binner.PrintSpoolService\LICENSE
+LicenseFile=..\LICENSE
 OutputDir=.\
 OutputBaseFilename=BinnerPrintSpoolServiceSetup-winx64-{#MyAppVersion}
 SetupIconFile=.\binner128x128.ico
@@ -46,7 +46,7 @@ Name: "keepconfiguration"; Description: "Keep existing configuration"
 Name: "installservice"; Description: "Install {#MyAppName} as a Windows service"
 
 [Files]
-Source: "..\Binner.PrintSpoolService\bin\Release\net10.0\win-x64\publish\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\bin\Release\net10.0\win-x64\publish\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
