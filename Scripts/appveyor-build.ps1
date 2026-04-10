@@ -124,6 +124,7 @@ if ($env:BUILDTARGETS.Contains("#$buildEnv#")) {
 
 $buildEnv = "win-x64"
 if ($env:BUILDTARGETS.Contains("#$buildEnv#")) {
+  Move-Item -Force -Path .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\appsettings.Production.json -Destination .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\appsettings.json
   #Copy-Item -Force -Path .\Binner.PrintSpoolService\scripts\windows\* -Destination .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish
 }
 
