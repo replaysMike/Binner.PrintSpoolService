@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="../../../Binner/Binner/Library/Binner.Common/Binner.Common.csproj" />
-  <Project Path="../../../Binner/Binner/Library/Binner.Services/Binner.Services.csproj" />
+  <Project Path="../../Binner/Binner/Library/Binner.Common/Binner.Common.csproj" />
+  <Project Path="../../Binner/Binner/Library/Binner.Services/Binner.Services.csproj" />
   <Project Path="Binner.PrintSpoolService.csproj" />
 </Solution>
