@@ -1,0 +1,12 @@
+[Unit]
+Description=Binner.PrintSpoolService
+
+[Service]
+WorkingDirectory=@INSTALLPATH@
+ExecStart=@INSTALLPATH@/Binner.PrintSpoolService
+SyslogIdentifier=Binner.PrintSpoolService
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

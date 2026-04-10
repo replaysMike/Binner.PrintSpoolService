@@ -128,7 +128,7 @@ if ($env:BUILDTARGETS.Contains("#$buildEnv#")) {
 
 $buildEnv = "win-x64"
 if ($env:BUILDTARGETS.Contains("#$buildEnv#")) {
-  Copy-Item -Force -Path .\Binner.PrintSpoolService\scripts\windows\* -Destination .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish
+  #Copy-Item -Force -Path .\Binner.PrintSpoolService\scripts\windows\* -Destination .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish
 }
 
 $buildEnv = "linux-x64"
