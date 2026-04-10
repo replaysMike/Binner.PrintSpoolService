@@ -1,4 +1,4 @@
-#define MyAppName "Binner"
+#define MyAppName "Binner Print Spool Service"
 #define MyAppVersion "0.0"
 #define MyAppPublisher "Binner"
 #define MyAppURL "https://github.com/replaysMike/Binner.PrintSpoolService"
@@ -18,7 +18,7 @@ DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
 LicenseFile=..\LICENSE
 OutputDir=.\
-OutputBaseFilename=BinnerPrintSpoolServiceSetup-winx64-{#MyAppVersion}
+OutputBaseFilename=Binner_PrintSpoolServiceSetup-winx64-{#MyAppVersion}
 SetupIconFile=.\binner128x128.ico
 Compression=lzma
 SolidCompression=yes
