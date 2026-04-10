@@ -25,7 +25,7 @@ $sw = [Diagnostics.Stopwatch]::StartNew()
   Write-Host "Docker" -ForegroundColor cyan
   docker --version
 
-#Clone and build Binner into the ExternalBuild folder, where the licensed provider project will reference the data layer
+#Clone and build Binner into the parent folder, where the current project will reference
 $path = "C:\projects\Binner"
 Write-Host "Cloning Binner[$binnerBranch] to $path" -ForegroundColor green
 If (!(test-path -PathType container $path)) {
@@ -34,6 +34,9 @@ If (!(test-path -PathType container $path)) {
 
 git clone -q --branch=$binnerBranch https://github.com/replaysMike/Binner.git $path
 if ($LastExitCode -ne 0) { exit $LASTEXITCODE }
+
+Write-Host "Listing all files..." -ForegroundColor magenta
+Get-ChildItem -Recurse -Path "C:\projects" | Where { $_.PSIsContainer } | Select FullName
 
 $sw.Stop()
 $sw.Elapsed | Select-Object @{n = "Elapsed"; e = { $_.Minutes, "m ", $_.Seconds, "s ", $_.Milliseconds, "ms " -join "" } }
