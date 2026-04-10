@@ -124,52 +124,51 @@ if ($env:BUILDTARGETS.Contains("#$buildEnv#")) {
 
 $buildEnv = "win-x64"
 if ($env:BUILDTARGETS.Contains("#$buildEnv#")) {
-  #Copy-Item -Force -Path .\Binner.PrintSpoolService\scripts\windows\* -Destination .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish
+  #Copy-Item -Force -Path .\Binner.PrintSpoolService\scripts\windows\* -Destination .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish
 }
 
 $buildEnv = "linux-x64"
 if ($env:BUILDTARGETS.Contains("#$buildEnv#")) {
-  Move-Item -Force -Path .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\appsettings.Production.json -Destination .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\appsettings.default.json
+  Move-Item -Force -Path .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\appsettings.Production.json -Destination .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\appsettings.default.json
   if (!$?) { exit -1  }
-  Move-Item -Force -Path .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\nlog.Unix.config -Destination .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\nlog.config
+  Move-Item -Force -Path .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\nlog.Unix.config -Destination .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\nlog.config
   if (!$?) { exit -1  }
-  Copy-Item -Force -Path .\Binner.PrintSpoolService\scripts\unix\* -Destination .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish
-  New-Item -ItemType Directory -Force -Path .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\db
-  New-Item -ItemType Directory -Force -Path .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\logs
+  Copy-Item -Force -Path .\Binner.PrintSpoolService\scripts\unix\* -Destination .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish
+  if (!$?) { exit -1  }
+  New-Item -ItemType Directory -Force -Path .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\logs
 }
 
 $buildEnv = "linux-arm"
 if ($env:BUILDTARGETS.Contains("#$buildEnv#")) {
-  Move-Item -Force -Path .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\appsettings.Production.json -Destination .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\appsettings.default.json
+  Move-Item -Force -Path .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\appsettings.Production.json -Destination .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\appsettings.default.json
   if (!$?) { exit -1  }
-  Move-Item -Force -Path .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\nlog.Unix.config -Destination .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\nlog.config
+  Move-Item -Force -Path .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\nlog.Unix.config -Destination .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\nlog.config
   if (!$?) { exit -1  }
-  Copy-Item -Force -Path .\Binner.PrintSpoolService\scripts\unix\* -Destination .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish
-  New-Item -ItemType Directory -Force -Path .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\db
-  New-Item -ItemType Directory -Force -Path .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\logs
+  Copy-Item -Force -Path .\Binner.PrintSpoolService\scripts\unix\* -Destination .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish
+  if (!$?) { exit -1  }
+  New-Item -ItemType Directory -Force -Path .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\logs
 }
 
 $buildEnv = "linux-arm64"
 if ($env:BUILDTARGETS.Contains("#$buildEnv#")) {
-  Move-Item -Force -Path .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\appsettings.Production.json -Destination .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\appsettings.default.json
+  Move-Item -Force -Path .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\appsettings.Production.json -Destination .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\appsettings.default.json
   if (!$?) { exit -1  }
-  Move-Item -Force -Path .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\nlog.Unix.config -Destination .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\nlog.config
+  Move-Item -Force -Path .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\nlog.Unix.config -Destination .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\nlog.config
   if (!$?) { exit -1  }
-  Copy-Item -Force -Path .\Binner.PrintSpoolService\scripts\unix\* -Destination .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish
-  New-Item -ItemType Directory -Force -Path .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\db
-  New-Item -ItemType Directory -Force -Path .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\logs
+  Copy-Item -Force -Path .\Binner.PrintSpoolService\scripts\unix\* -Destination .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish
+  if (!$?) { exit -1  }
+  New-Item -ItemType Directory -Force -Path .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\logs
 }
 
 $buildEnv = "osx-x64"
 if ($env:BUILDTARGETS.Contains("#$buildEnv#")) {
-  Move-Item -Force -Path .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\appsettings.Production.json -Destination .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\appsettings.default.json
+  Move-Item -Force -Path .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\appsettings.Production.json -Destination .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\appsettings.default.json
   if (!$?) { exit -1  }
-  Move-Item -Force -Path .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\nlog.Unix.config -Destination .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\nlog.config
+  Move-Item -Force -Path .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\nlog.Unix.config -Destination .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\nlog.config
   if (!$?) { exit -1  }
-  Copy-Item -Force -Path .\Binner.PrintSpoolService\scripts\unix\* -Destination .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish
+  Copy-Item -Force -Path .\Binner.PrintSpoolService\scripts\unix\* -Destination .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish
   if (!$?) { exit -1  }
-  New-Item -ItemType Directory -Force -Path .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\db
-  New-Item -ItemType Directory -Force -Path .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\logs
+  New-Item -ItemType Directory -Force -Path .\Binner.PrintSpoolService\bin\$releaseConfiguration\$framework\$buildEnv\publish\logs
 }
 
 # build installers
@@ -195,16 +194,16 @@ $sw = [Diagnostics.Stopwatch]::StartNew()
 
   # (note) windows doesn't need this, it has it's own installer that won't be archived
   if ($env:BUILDTARGETS.Contains("#linux-x64#")) {
-    tar -czf Binner_PrintSpoolService_linux-x64.targz -C .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$($releaseConfiguration)\$framework\linux-x64\publish .
+    tar -czf Binner_PrintSpoolService_linux-x64.targz -C .\Binner.PrintSpoolService\bin\$($releaseConfiguration)\$framework\linux-x64\publish .
   }
   if ($env:BUILDTARGETS.Contains("#linux-arm#")) {
-    tar -czf Binner_PrintSpoolService_linux-arm.targz -C .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$($releaseConfiguration)\$framework\linux-arm\publish .
+    tar -czf Binner_PrintSpoolService_linux-arm.targz -C .\Binner.PrintSpoolService\bin\$($releaseConfiguration)\$framework\linux-arm\publish .
   }
   if ($env:BUILDTARGETS.Contains("#linux-arm64#")) {
-    tar -czf Binner_PrintSpoolService_linux-arm64.targz -C .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$($releaseConfiguration)\$framework\linux-arm64\publish .
+    tar -czf Binner_PrintSpoolService_linux-arm64.targz -C .\Binner.PrintSpoolService\bin\$($releaseConfiguration)\$framework\linux-arm64\publish .
   }
   if ($env:BUILDTARGETS.Contains("#osx-x64#")) {
-    tar -czf Binner_PrintSpoolService_osx-x64.targz -C .\Binner.PrintSpoolService\Binner.PrintSpoolService\bin\$($releaseConfiguration)\$framework\osx-x64\publish .
+    tar -czf Binner_PrintSpoolService_osx-x64.targz -C .\Binner.PrintSpoolService\bin\$($releaseConfiguration)\$framework\osx-x64\publish .
   }
 $sw.Stop()
 $sw.Elapsed | Select-Object @{n = "Elapsed"; e = { $_.Minutes, "m ", $_.Seconds, "s ", $_.Milliseconds, "ms " -join "" } }
