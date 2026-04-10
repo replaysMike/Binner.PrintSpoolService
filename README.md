@@ -1,5 +1,5 @@
 # Binner.PrintSpoolService
-Provides label printing capability for a remote printing device installed on another network or machine.
+Provides [Binner](https://github.com/replaysMike/Binner) label printing capability for a remote printing device installed on another network or machine.
 
 ## Installation
 
