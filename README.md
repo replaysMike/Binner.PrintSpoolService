@@ -6,6 +6,12 @@ This service can be used to provide access to your label printer if it's not ins
 
 ## Installation
 
+### Requirements
+
+To configure the service you will need to know your `Print Spool Queue Id` unique to your Binner installation (or Binner Cloud account), which can be found in Settings => Organization Settings. This feature was introduced in version 2.6.26 so ensure you are using a recent release.
+
+<img width="761" height="816" alt="image" src="https://github.com/user-attachments/assets/19ed588b-828f-4ed1-a474-e6fe22a0f8a6" />
+
 ### Installation on Windows
 
 Download the Windows installer from the [latest release](https://github.com/replaysMike/Binner.PrintSpoolService/releases)
@@ -30,8 +36,6 @@ If you are using [Binner cloud](https://binner.io), use `https://binner.io` for 
 ```
 
 You will also need to provide your PrintSpoolQueueId, which can be found in the Binner UI at Settings => Organization Settings => PrintSpoolQueueId.
-
-<img width="761" height="816" alt="image" src="https://github.com/user-attachments/assets/e99d0361-cb04-406f-88c0-44aed0fb10b6" />
 
 Example:
 ```json
