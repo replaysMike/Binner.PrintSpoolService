@@ -1,6 +1,9 @@
 # Binner.PrintSpoolService
 Provides [Binner](https://github.com/replaysMike/Binner) label printing capability for a remote printing device installed on another network or machine.
 
+## Description
+This service can be used to provide access to your label printer if it's not installed on the same server as [Binner](https://github.com/replaysMike/Binner) or if printing from [Binner Cloud](https://binner.io). It supports event driven printing as well as polling for pending print jobs and will choose based on available network connectivity. Installation is quick and easy with minimal configuration.
+
 ## Installation
 
 ### Installation on Windows
