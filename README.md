@@ -31,6 +31,8 @@ If you are using [Binner cloud](https://binner.io), use `https://binner.io` for 
 
 You will also need to provide your PrintSpoolQueueId, which can be found in the Binner UI at Settings => Organization Settings => PrintSpoolQueueId.
 
+<img width="761" height="816" alt="image" src="https://github.com/user-attachments/assets/e99d0361-cb04-406f-88c0-44aed0fb10b6" />
+
 Example:
 ```json
 {
